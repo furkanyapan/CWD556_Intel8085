@@ -1,0 +1,22 @@
+mvi h,00
+mvi l,00
+dce:mvi d, 00
+abc:MVi A, 88
+OUT 30
+DELAY: MVi C, 10
+DELAY_LOOP: DCR C
+JNZ DELAY_LOOP
+MVi A, 99
+OUT 30
+DELAY1: MVi C, 09
+DELAY_LOOP1: DCR C
+JNZ DELAY_LOOP1
+inr d
+mov a,d
+cpi ff
+Jnz abc
+inx h
+mov a,h
+cpi 06
+jnz dce
+hlt
